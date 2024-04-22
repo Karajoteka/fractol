@@ -6,7 +6,7 @@
 /*   By: aorcha-m <aorcha-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 16:53:31 by aorcha-m          #+#    #+#             */
-/*   Updated: 2024/04/19 17:22:37 by aorcha-m         ###   ########.fr       */
+/*   Updated: 2024/04/22 16:03:24 by aorcha-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,12 @@ int	check_input_and_init_vars(int argc, char **argv, t_fractal_vars *vars)
 		}
 		init_julia(vars, ft_atoi(argv[2]));
 	}
+	else if (ft_strcmp(argv[1], "burning_ship") == 0)
+		init_burning_ship(vars);
 	else
 	{
 		ft_putstr("Fractal no reconocido. Opciones válidas: mandelbrot, "
-			"julia\n");
+			"julia, burning_ship\n");
 		return (1);
 	}
 	return (0);
@@ -80,7 +82,8 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 	{
-		ft_putstr("Uso: ./fractol [mandelbrot/julia] [1/2/3 para julia]\n");
+		ft_putstr("Uso: ./fractol [mandelbrot/julia/burning_ship]"
+			"[1/2/3 para julia]\n");
 		return (1);
 	}
 	if (check_input_and_init_vars(argc, argv, &vars))

@@ -6,7 +6,7 @@
 /*   By: aorcha-m <aorcha-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 16:55:01 by aorcha-m          #+#    #+#             */
-/*   Updated: 2024/04/19 17:54:54 by aorcha-m         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:50:24 by aorcha-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@
 
 # define KEY_UP 264
 # define KEY_DOWN 265
-# define KEY_LEFT 263
-# define KEY_RIGHT 262
 # define ESC 53
 # define C 67
 

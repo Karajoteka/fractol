@@ -6,7 +6,7 @@
 /*   By: aorcha-m <aorcha-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 19:27:54 by aorcha-m          #+#    #+#             */
-/*   Updated: 2024/04/18 19:52:04 by aorcha-m         ###   ########.fr       */
+/*   Updated: 2024/04/22 16:05:00 by aorcha-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,10 @@ void	draw_fractal_with_set_vars(t_mlx_data *data,
 		{
 			set_vars(data, data->props.x, data->props.y);
 			data->vars.iter = 0;
-			iterations = calculate_iterations(data->vars);
+			if (ft_strcmp(data->fractal_type, "burning_ship") == 0)
+				iterations = calculate_iterations_burning_ship(data->vars);
+			else
+				iterations = calculate_iterations(data->vars);
 			if (iterations == MAX_ITERATIONS)
 				mlx_put_pixel(data->img, data->props.x, data->props.y,
 					0x000000);
@@ -59,6 +62,8 @@ void	draw_fractal(t_mlx_data *data)
 		mandelbrot(data);
 	else if (ft_strcmp(data->fractal_type, "julia") == 0)
 		julia(data);
+	else if (ft_strcmp(data->fractal_type, "burning_ship") == 0)
+		burning_ship(data);
 	else
 		ft_putstr("Fractal no reconocido\n");
 }

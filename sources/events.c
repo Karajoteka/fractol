@@ -6,7 +6,7 @@
 /*   By: aorcha-m <aorcha-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 18:51:14 by aorcha-m          #+#    #+#             */
-/*   Updated: 2024/04/19 17:58:30 by aorcha-m         ###   ########.fr       */
+/*   Updated: 2024/04/22 17:02:01 by aorcha-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,9 @@ void	handle_key(struct mlx_key_data key_data, void *param)
 {
 	t_mlx_data	*data;
 	int			key;
-	double		move_factor;
 
 	data = (t_mlx_data *)param;
 	key = key_data.key;
-	move_factor = 0.1 * data->vars.zoom;
 	if (key_data.action == 0)
 	{
 		if (key == KEY_UP)
